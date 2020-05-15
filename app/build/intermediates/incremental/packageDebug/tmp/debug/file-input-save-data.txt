@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Fri May 15 17:48:55 CST 2020
+0.baseType=DIRECTORY
+0.base=D\:\\GP\\ready\\Android-Video-Editor-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1

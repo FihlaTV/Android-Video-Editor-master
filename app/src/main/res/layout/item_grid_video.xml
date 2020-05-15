@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/iv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="fitXY" />-->
+
+    <com.shehuan.niv.NiceImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:border_color="#FFFFFF"
+        android:background="#00000000"
+        app:corner_radius="25dp"
+        app:border_width="4dp"
+        app:is_circle="false" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="13sp" />
+
+</FrameLayout>
