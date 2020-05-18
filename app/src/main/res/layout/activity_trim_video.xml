@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:background="@android:color/white">
 
-    <!--  <include layout="@layout/toolbar"/>-->
-
+<!--      <include layout="@layout/toolbar"/>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintVertical_bias="0"
         android:orientation="horizontal">
         <ImageButton
+            android:id="@+id/trim_back_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -21,6 +25,7 @@
             android:src="@drawable/close" />
 
         <ImageButton
+            android:id="@+id/trim_save_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -30,44 +35,59 @@
     </LinearLayout>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintHeight_percent="0.6"-->
+<!--        app:layout_constraintVertical_bias="0.5"-->
+<!--        android:orientation="vertical">-->
 
         <RelativeLayout
             android:id="@+id/layout_surface_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/layout"
-            android:gravity="center"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintVertical_bias="0.25"
+            android:background="@drawable/shape"
             android:orientation="vertical">
-            <com.marvhong.videoeffect.GlVideoView
+            <com.ignei.videoeffect.GlVideoView
                 android:id="@+id/glsurfaceview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintVertical_bias="1"
+           >
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp">
-
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0">-->
                 <LinearLayout
                     android:id="@+id/ll_trim_container"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_percent="0.6"
+                    app:layout_constraintVertical_bias="0"
+                    android:orientation="vertical"
+                    >
                     <TextView
                         android:id="@+id/video_shoot_tip"
                         android:layout_width="wrap_content"
@@ -80,33 +100,44 @@
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="裁剪 10 s"
+                        android:visibility="gone"
                         android:textColor="@android:color/white"
                         android:textSize="12sp" />
 
-                    <FrameLayout
+                    <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="62dp">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cut_background">
 
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/video_thumb_listview"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
+                            android:layout_height="62dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintVertical_bias="0.3"
+                           />
                         <ImageView
                             android:id="@+id/positionIcon"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="56dp"
-                            android:src="@drawable/shape_seek_bar" />
-
+                            android:layout_height="62dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintVertical_bias="0.3"
+                            android:src="@drawable/shape_seek_bar"
+                            tools:ignore="MissingConstraints" />
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
+                            android:layout_height="62dp"
+                            android:layout_gravity="center"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintVertical_bias="0.3"
+                            android:orientation="horizontal"
+                           >
                             <View
                                 android:layout_width="56dp"
+                                android:visibility="invisible"
                                 android:layout_height="match_parent"
                                 android:background="#66000000" />
 
@@ -121,10 +152,11 @@
                             <View
                                 android:layout_width="56dp"
                                 android:layout_height="match_parent"
+                                android:visibility="invisible"
                                 android:background="#66000000" />
 
                         </LinearLayout>
-                    </FrameLayout>
+                    </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
 
                 <!--滤镜-->
@@ -134,6 +166,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:scrollbars="none"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.2"
                     android:visibility="gone">
 
                     <LinearLayout
@@ -144,17 +179,19 @@
                         android:paddingLeft="10dp" />
 
                 </HorizontalScrollView>
-
-            </FrameLayout>
+<!--            </FrameLayout>-->
 
             <LinearLayout
                 android:id="@+id/ll_tab"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintVertical_bias="0.7"
                 android:orientation="horizontal">
 
                 <LinearLayout
-
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -165,10 +202,10 @@
                         android:id="@+id/ll_trim_tab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/cut_btn"
-                        android:background="#00000000"/>
+                        android:background="#00000000"
+                        android:src="@drawable/cut_btn" />
 
-<!--                    <TextView-->
+                    <!--                    <TextView-->
 <!--                        android:layout_width="wrap_content"-->
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_gravity="center"-->
@@ -197,7 +234,7 @@
                         android:id="@+id/ll_effect_tab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/music_btn"
+                        android:src="@drawable/filter_btn"
                         android:background="#00000000"/>
 
 <!--                    <TextView-->
@@ -220,8 +257,8 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Android-Video-Editor</string>
+    <string name="app_name">Genius Editing</string>
 
-  <string name="in_process">正在处理...</string>
+    <string name="in_process">Processing...</string>
 </resources>

@@ -1,4 +1,4 @@
-#Fri May 15 17:48:55 CST 2020
+#Mon May 18 15:53:50 CST 2020
 base.0=D\:\\GP\\ready\\Android-Video-Editor-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -473,7 +473,7 @@ public class FileUtils {
     };
 
     /**
-     * File (not directories) filter.
+     * File (not directories) filter_btn.
      *
      * @author paulburke
      */
@@ -487,7 +487,7 @@ public class FileUtils {
     };
 
     /**
-     * Folder (directories) filter.
+     * Folder (directories) filter_btn.
      *
      * @author paulburke
      */
@@ -509,7 +509,7 @@ public class FileUtils {
     public static Intent createGetContentIntent() {
         // Implicitly allow the user to select a particular kind of data
         final Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        // The MIME data type filter
+        // The MIME data type filter_btn
         intent.setType("*/*");
         // Only return URIs that can be opened with ContentResolver
         intent.addCategory(Intent.CATEGORY_OPENABLE);

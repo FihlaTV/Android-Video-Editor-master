@@ -8,6 +8,7 @@
     <!--  <include layout="@layout/toolbar"/>-->
 
     <ImageButton
+        android:id="@+id/album_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/close"
@@ -54,7 +55,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/music_btn"
+        android:background="@drawable/filter_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintLeft_toLeftOf="parent"
